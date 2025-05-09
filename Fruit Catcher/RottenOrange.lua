@@ -32,6 +32,13 @@ elseif self.x + self.width > window_width then
 self.x = window_width - self.width
 end 
     
+if resetfallspeed == true then 
+
+    self.speed = 400
+    resetfallspeed = false
+end
+
+
     end
 
     function RottenOrange:checkCollision(a,b)

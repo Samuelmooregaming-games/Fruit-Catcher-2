@@ -35,7 +35,7 @@ elseif self.x + self.width > window_width then
 self.x = window_width - self.width
 end 
 
-print(self.speed)
+
 if SpeedUp == true then
     activetimer = activetimer + dt
     self.speed = 700

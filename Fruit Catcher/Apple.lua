@@ -30,6 +30,13 @@ local Apple = Object:extend()
         gameover = false
         end
 
+        if resetfallspeed == true then 
+
+            self.speed = 200
+            resetfallspeed = false
+        end
+
+
         local window_width = love.graphics.getWidth()
 
         if self.x < 0 then

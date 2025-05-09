@@ -32,6 +32,12 @@ local RottenBanana = Object:extend()
         self.x = window_width - self.width
         end 
 
+        if resetfallspeed == true then 
+
+            self.speed = 300
+            resetfallspeed = false
+        end
+
 
     end
 

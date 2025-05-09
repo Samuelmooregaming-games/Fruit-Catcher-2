@@ -115,10 +115,12 @@ player:update(dt)
 if Fruits[self.fruit]:checkCollision(player,Fruits[self.fruit])  == true then
     self.fruit = love.math.random(1,3)
     catch:play()
+    Fruits[self.fruit].speed = Fruits[self.fruit].speed + 5
     
 
 elseif Fruits[self.fruit]:checkCollision(ground,Fruits[self.fruit])  == true then
     self.fruit = love.math.random(1,3)
+    Fruits[self.fruit].speed = Fruits[self.fruit].speed + 5
 end
 
 
@@ -130,10 +132,14 @@ if RottenFruits[self.rotten]:checkCollision(player, RottenFruits[self.rotten] ) 
     SpeedUp = false
     player.speed = 400
     activetimer = 0
+
+    resetfallspeed = true
+    
     self.powerup = nil
 
 elseif RottenFruits[self.rotten]:checkCollision(ground, RottenFruits[self.rotten]) == true then
     self.rotten = love.math.random(1,3)
+    RottenFruits[self.rotten].speed = RottenFruits[self.rotten].speed + 1
 end
 
 if self.powerup ~= nil then
@@ -194,8 +200,9 @@ end
 song:play()
 love.graphics.print("Score: " .. score, 16, 16)
 love.graphics.print("highscore: ".. highscore, 200, 16)
+
 if SpeedUp == true then
-    love.graphics.print("Speed Up! "..activeduration - activetimer   ,443, 16)
+    love.graphics.print("Speed Up! ".. activeduration - activetimer   ,443, 16)
     
 end
 

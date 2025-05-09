@@ -37,19 +37,19 @@ self.x = 0
 elseif self.x + self.width > window_width then
 self.x = window_width - self.width
 end 
-print(self.x)
+--print(self.x)
 
 
 
 if SpeedUp == true then
     activetimer = activetimer + dt
-    self.speed = 700
+    
     
 end
 
 if gameover == true then
     self.speed = 500
-    self.x = 259
+    Player.self.x = 259
 end
 
 if activetimer >= activeduration then

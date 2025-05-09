@@ -56,7 +56,7 @@ function GameScreen:new()
     self.fruit = love.math.random(1,3)
     self.rotten = love.math.random(1,3)
 
-    timer = 10
+    timer = 60
     duration = 0.0
 
     
@@ -83,7 +83,7 @@ timer = timer - dt
 
 if timer <= duration then
     self.powerup = PowerUp()
-    timer = 10
+    timer = 60
 end
 
 -- orange:update(dt)   
@@ -116,7 +116,7 @@ if self.powerup ~= nil then
 
 if self.powerup:checkCollision(player, self.powerup) or gameover == true then
 self.powerup = nil
-timer = 10
+timer = 60
 end
 
 end

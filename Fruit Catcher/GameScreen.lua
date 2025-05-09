@@ -26,6 +26,7 @@ function GameScreen:new()
     rottenbanana = RottenBanana()
     rottenorange = RottenOrange()
     ground = Ground()
+    highscore = LoadHighScore()
     self.powerup = nil
    Object = require "classic"
     require "player"
@@ -65,11 +66,24 @@ function GameScreen:new()
 
 end
 
+function SaveHighScore(highscore)
+    love.filesystem.write("highscore.txt", tostring(highscore))
+end
+
+function LoadHighScore()
+    if love.filesystem.getInfo("highscore.txt") then
+        local contents = love.filesystem.read("highscore.txt")
+        return tonumber(contents) or 0
+    else
+        return 0
+    end
+end
 
 function  GameScreen:Update(dt)
     
     if score >= highscore then
         highscore = score
+        SaveHighScore(highscore)
        
     end
 

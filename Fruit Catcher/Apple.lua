@@ -4,6 +4,7 @@ local Apple = Object:extend()
 
     function Apple:new()
         self.image = love.graphics.newImage("Textures/apple.png")
+        
         self.x = love.math.random(2,550)
         self.y = 40
         self.speed = 200

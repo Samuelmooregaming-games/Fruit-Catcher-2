@@ -32,7 +32,7 @@ function love.load()
     love.window.setMode(600,900)
     love.window.setIcon(love.image.newImageData("Textures/apple.png") )
     love.window.setTitle('Fruit Catcher 2')
-
+    
     Screens = {}
     table.insert(Screens, startScreen())
     table.insert(Screens, GameScreen())

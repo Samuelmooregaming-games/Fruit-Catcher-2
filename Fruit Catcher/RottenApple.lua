@@ -4,7 +4,7 @@ local RottenApple = Object:extend()
 
     function RottenApple:new()
         self.image = love.graphics.newImage("Textures/Rottenapple.png")
-        self.x = love.math.random(2,550)
+        self.x = love.math.random(2,482)
         self.y = 40
         self.speed = 200
         self.width = self.image:getWidth()
@@ -20,9 +20,18 @@ local RottenApple = Object:extend()
     
     if self.y > 850 then
         self.y = 40
-        self.x = love.math.random(2,500)       
+        self.x = love.math.random(2,482)       
         end
     
+        local window_width = love.graphics.getWidth()
+
+        if self.x < 0 then
+        self.x = 0
+        elseif self.x + self.width > window_width then
+        self.x = window_width - self.width
+        end 
+
+
     end
 
     function RottenApple:checkCollision(a,b)
@@ -45,7 +54,7 @@ local RottenApple = Object:extend()
      
      and a_top < b_bottom then
          self.y = 40
-         self.x = love.math.random(2,550)
+         self.x = love.math.random(2,482)
          if a.tag ~= "Ground" and a.tag == "Player" then
             gameover = true
             ChangeScreen(4)

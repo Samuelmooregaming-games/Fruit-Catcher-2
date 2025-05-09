@@ -114,7 +114,7 @@ end
 
 if self.powerup ~= nil then
 
-if self.powerup:checkCollision(player, self.powerup) == true then
+if self.powerup:checkCollision(player, self.powerup) or gameover == true then
 self.powerup = nil
 timer = 10
 end

@@ -4,7 +4,7 @@ local PowerUp = Object:extend()
 
 function PowerUp:new()
     self.image = love.graphics.newImage("Textures/powerup.png")
-        self.x = love.math.random(2,550)
+        self.x = love.math.random(2,482)
         self.y = 40
         self.speed = 100
         self.width = self.image:getWidth()
@@ -13,6 +13,13 @@ end
 
 function PowerUp:update(dt)
 self.y = self.y + self.speed * dt
+local window_width = love.graphics.getWidth()
+
+if self.x < 0 then
+self.x = 0
+elseif self.x + self.width > window_width then
+self.x = window_width - self.width
+end 
 
 end
 

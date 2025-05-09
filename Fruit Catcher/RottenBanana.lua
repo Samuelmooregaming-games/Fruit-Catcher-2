@@ -4,7 +4,7 @@ local RottenBanana = Object:extend()
 
     function RottenBanana:new()
         self.image = love.graphics.newImage("Textures/RottenBanana.png")
-        self.x = love.math.random(2,550)
+        self.x = love.math.random(2,482)
         self.y = 40
         self.speed = 300
         self.width = self.image:getWidth()
@@ -20,8 +20,16 @@ local RottenBanana = Object:extend()
     
     if self.y > 850 then
         self.y = 40
-        self.x = love.math.random(2,500)       
+        self.x = love.math.random(2,482)       
         end
+
+        local window_width = love.graphics.getWidth()
+
+if self.x < 0 then
+self.x = 0
+elseif self.x + self.width > window_width then
+self.x = window_width - self.width
+end 
     
     end
 

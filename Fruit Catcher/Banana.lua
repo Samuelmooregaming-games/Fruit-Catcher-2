@@ -4,7 +4,7 @@ local Banana = Object:extend()
 
     function Banana:new()
         self.image = love.graphics.newImage("Textures/Banana.png")
-        self.x = love.math.random(2,500)
+        self.x = love.math.random(2,482)
         self.y = 40
         self.speed = 300
         self.width = self.image:getWidth()
@@ -19,10 +19,19 @@ local Banana = Object:extend()
     self.y = self.y + self.speed * dt
     if gameover == true then
         self.y = 40
-        self.x = love.math.random(2,440)
+        self.x = love.math.random(2,482)
         banana = love.math.random(1,3)
         gameover =false
         end
+
+        local window_width = love.graphics.getWidth()
+
+if self.x < 0 then
+self.x = 0
+elseif self.x + self.width > window_width then
+self.x = window_width - self.width
+end 
+
     end
     
    

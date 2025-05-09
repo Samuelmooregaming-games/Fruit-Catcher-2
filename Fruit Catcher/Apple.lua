@@ -4,7 +4,7 @@ local Apple = Object:extend()
 
     function Apple:new()
         self.image = love.graphics.newImage("Textures/apple.png")
-        self.x = love.math.random(2,550)
+        self.x = love.math.random(2,482)
         self.y = 40
         self.speed = 200
         self.width = self.image:getWidth()
@@ -24,7 +24,7 @@ local Apple = Object:extend()
     
     if gameover == true then
         self.y = 40
-        self.x = love.math.random(2,500)
+        self.x = love.math.random(2,482)
         score = 0
         gameover = false
         end
@@ -32,7 +32,13 @@ local Apple = Object:extend()
         -- if self.touched == true then
             
         -- end
+        local window_width = love.graphics.getWidth()
 
+        if self.x < 0 then
+        self.x = 0
+        elseif self.x + self.width > window_width then
+        self.x = window_width - self.width
+        end 
         
     end
 

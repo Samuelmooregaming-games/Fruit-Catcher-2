@@ -3,7 +3,7 @@ local Player = Object:extend()
 
 function Player:new()
 self.image = love.graphics.newImage("Textures/PlayerBasket.png")
-self.x = 300
+self.x = 259
 self.y = 770
 self.speed = 500
 score = 0
@@ -14,10 +14,13 @@ self.tag = "Player"
 
 activetimer = 0.0
 activeduration = 10
+
+
 end
 
 function Player:draw()
 love.graphics.draw(self.image, self.x,self.y)
+
 end
 
 function Player:update(dt)
@@ -34,12 +37,19 @@ self.x = 0
 elseif self.x + self.width > window_width then
 self.x = window_width - self.width
 end 
+print(self.x)
 
-print(self.speed)
+
+
 if SpeedUp == true then
     activetimer = activetimer + dt
     self.speed = 700
     
+end
+
+if gameover == true then
+    self.speed = 500
+    self.x = 259
 end
 
 if activetimer >= activeduration then

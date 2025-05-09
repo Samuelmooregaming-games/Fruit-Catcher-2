@@ -4,7 +4,7 @@ local RottenApple = Object:extend()
 
 
     function RottenApple:new()
-        self.image = love.graphics.newImage("Textures/Rottenapple.png")
+        self.image = love.graphics.newImage("Textures/rottenApple.png")
         self.x = love.math.random(2,550)
         self.y = 40
         self.speed = 200

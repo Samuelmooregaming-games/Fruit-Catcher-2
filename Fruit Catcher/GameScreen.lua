@@ -1,5 +1,5 @@
 local Object = require "classic"
-local Player = require "Player"
+local Player = require "player"
 local Apple = require "Apple"
 local Banana = require "Banana"
 local Orange = require "Orange"

@@ -1,4 +1,4 @@
-local Player = require "Player"
+local Player = require "player"
 
 
 
@@ -30,7 +30,7 @@ function love.load()
     local GameOver = require "loose"
     --Screens = require "screen"
     love.window.setMode(600,900)
-    love.window.setIcon(love.image.newImageData("Textures/apple.png") )
+    love.window.setIcon(love.image.newImageData("Textures/icon.png") )
     love.window.setTitle('Fruit Catcher 2')
     
     Screens = {}
